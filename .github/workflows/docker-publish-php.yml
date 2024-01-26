@@ -72,7 +72,7 @@ jobs:
           file: ./php/php8.2/Dockerfile
           context: ./php/php8.2/
           push: ${{ github.event_name != 'pull_request' }}
-          tags: type=sha,prefix=php8.2,value=php8.2
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
