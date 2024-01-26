@@ -5,5 +5,5 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY setup.sh setup.sh
 
 RUN chmod +x setup.sh
-RUN ./setup-php.sh
+RUN ./setup.sh
 
