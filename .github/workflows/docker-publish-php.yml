@@ -13,7 +13,7 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: docker-dev-images:ubuntu-php
+  IMAGE_NAME: ${{ github.repository }}
 
 
 jobs:
@@ -72,7 +72,7 @@ jobs:
           file: ./php/php8.2/Dockerfile
           context: ./php/php8.2/
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ubuntu-php
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
