@@ -74,9 +74,9 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             # dynamically set the branch name as a prefix
-            type=sha,prefix={{branch}}-
+            type=sha,prefix=php8.2
             # dynamically set the branch name and sha as a custom tag
-            type=raw,value=php-{{branch}}-{{sha}}
+            type=raw,value=php8.2-{{sha}}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
